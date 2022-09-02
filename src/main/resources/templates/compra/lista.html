@@ -31,10 +31,10 @@
 						<tr>
 							<th class="bg-warning">#</th>
 							<th class="bg-warning" th:text="#{compra.data.label}"></th>
-							<th class="bg-warning" th:text="#{livro.titulo.label}"></th>
-							<th class="bg-warning" th:text="#{livro.autor.label}"></th>
-							<th class="bg-warning" th:text="#{livro.editora.label}"></th>
-							<th class="bg-warning" th:text="#{livro.ano.label}"></th>
+							<th class="bg-warning" th:text="#{pacote.titulo.label}"></th>
+							<th class="bg-warning" th:text="#{pacote.autor.label}"></th>
+							<th class="bg-warning" th:text="#{pacote.editora.label}"></th>
+							<th class="bg-warning" th:text="#{pacote.ano.label}"></th>
 							<th class="bg-warning" th:text="#{compra.valor.label}"></th>
 						</tr>
 					</thead>
@@ -42,10 +42,10 @@
 						<tr th:each="compra : ${compras}">
 							<td th:text="${compra.id}"></td>
 							<td th:text="${compra.data}"></td>
-							<td th:text="${compra.livro.titulo}"></td>
-							<td th:text="${compra.livro.autor}"></td>
-							<td th:text="${compra.livro.editora.nome}"></td>
-							<td th:text="${compra.livro.ano}"></td>
+							<td th:text="${compra.pacote.titulo}"></td>
+							<td th:text="${compra.pacote.autor}"></td>
+							<td th:text="${compra.pacote.editora.nome}"></td>
+							<td th:text="${compra.pacote.ano}"></td>
 							<td th:text="|R$ ${#numbers.formatDecimal(compra.valor,2,2,'COMMA')}|"></td>
 						</tr>
 					</tbody>

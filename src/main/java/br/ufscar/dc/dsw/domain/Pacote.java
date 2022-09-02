@@ -13,28 +13,28 @@ import javax.validation.constraints.Size;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "Livro")
-public class Livro extends AbstractEntity<Long> {
+@Table(name = "Pacote")
+public class Pacote extends AbstractEntity<Long> {
 
-	@NotBlank(message = "{NotBlank.livro.titulo}")
+	@NotBlank(message = "{NotBlank.pacote.titulo}")
 	@Size(max = 60)
 	@Column(nullable = false, length = 60)
 	private String titulo;
 
-	@NotBlank(message = "{NotBlank.livro.autor}")
+	@NotBlank(message = "{NotBlank.pacote.autor}")
 	@Size(max = 60)
 	@Column(nullable = false, length = 60)
 	private String autor;
     
-	@NotNull(message = "{NotNull.livro.ano}")
+	@NotNull(message = "{NotNull.pacote.ano}")
 	@Column(nullable = false, length = 5)
 	private Integer ano;
 	
-	@NotNull(message = "{NotNull.livro.preco}")
+	@NotNull(message = "{NotNull.pacote.preco}")
 	@Column(nullable = false, columnDefinition = "DECIMAL(8,2) DEFAULT 0.0")
 	private BigDecimal preco;
     
-	@NotNull(message = "{NotNull.livro.editora}")
+	@NotNull(message = "{NotNull.pacote.editora}")
 	@ManyToOne
 	@JoinColumn(name = "editora_id")
 	private Editora editora;

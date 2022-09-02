@@ -67,7 +67,7 @@ public class EditoraController {
 	
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
-		if (service.editoraTemLivros(id)) {
+		if (service.editoraTemPacotes(id)) {
 			model.addAttribute("fail", "editora.delete.fail");
 		} else {
 			service.excluir(id);

@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.ufscar.dc.dsw.domain.Compra;
-import br.ufscar.dc.dsw.domain.Livro;
+import br.ufscar.dc.dsw.domain.Pacote;
 import br.ufscar.dc.dsw.domain.Usuario;
 import br.ufscar.dc.dsw.security.UsuarioDetails;
 import br.ufscar.dc.dsw.service.spec.ICompraService;
-import br.ufscar.dc.dsw.service.spec.ILivroService;
+import br.ufscar.dc.dsw.service.spec.IPacoteService;
 
 @Controller
 @RequestMapping("/compras")
@@ -32,7 +32,7 @@ public class CompraController {
 	private ICompraService service;
 	
 	@Autowired
-	private ILivroService livroService;
+	private IPacoteService pacoteService;
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Compra compra) {
@@ -67,8 +67,8 @@ public class CompraController {
 		return "redirect:/compras/listar";
 	}
 	
-	@ModelAttribute("livros")
-	public List<Livro> listaLivros() {
-		return livroService.buscarTodos();
+	@ModelAttribute("pacotes")
+	public List<Pacote> listaPacotes() {
+		return pacoteService.buscarTodos();
 	}
 }
