@@ -9,26 +9,38 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+
 import br.ufscar.dc.dsw.validation.UniqueCNPJ;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "Editora")
-public class Editora extends AbstractEntity<Long> {
+@Table(name = "Agencia")
+public class Agencia extends GenericUsuario {
 
-	@UniqueCNPJ (message = "{Unique.editora.CNPJ}")
+	@UniqueCNPJ (message = "{Unique.agencia.CNPJ}")
 	@NotBlank
-	@Size(min = 18, max = 18, message = "{Size.editora.CNPJ}")
+	@Size(min = 18, max = 18, message = "{Size.agencia.CNPJ}")
 	@Column(nullable = false, unique = true, length = 60)
 	private String CNPJ;
 	
-	@NotBlank
-	@Size(min = 3, max = 60)
-	@Column(nullable = false, unique = true, length = 60)
-	private String nome;
 
-	@OneToMany(mappedBy = "editora")
+	@NotBlank 
+	@Size(min = 0, max = 256)
+	@Column(nullable = false, length = 256)
+	private String descricao;
+
+	@OneToMany(mappedBy = "agencia")
 	private List<Pacote> pacotes;
+
+	
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 	
 	public String getCNPJ() {
 		return CNPJ;
@@ -38,13 +50,6 @@ public class Editora extends AbstractEntity<Long> {
 		this.CNPJ = CNPJ;
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 
 	public List<Pacote> getPacotes() {
 		return pacotes;

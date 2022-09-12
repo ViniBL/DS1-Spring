@@ -23,6 +23,8 @@ import br.ufscar.dc.dsw.domain.Usuario;
 import br.ufscar.dc.dsw.security.UsuarioDetails;
 import br.ufscar.dc.dsw.service.spec.ICompraService;
 import br.ufscar.dc.dsw.service.spec.IPacoteService;
+import br.ufscar.dc.dsw.service.spec.IUsuarioService;
+
 
 @Controller
 @RequestMapping("/compras")
@@ -33,6 +35,9 @@ public class CompraController {
 	
 	@Autowired
 	private IPacoteService pacoteService;
+
+	@Autowired 
+	private IUsuarioService usuarioService;
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Compra compra) {
@@ -44,7 +49,9 @@ public class CompraController {
 	
 	private Usuario getUsuario() {
 		UsuarioDetails usuarioDetails = (UsuarioDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		return usuarioDetails.getUsuario();
+		String username = usuarioDetails.getUsername();
+		Usuario usuario = usuarioService.buscarPorLogin(username);
+		return usuario;
 	}
 	
 	@GetMapping("/listar")

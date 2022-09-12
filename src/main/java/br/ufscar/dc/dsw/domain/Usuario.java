@@ -5,59 +5,55 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "Usuario")
-public class Usuario extends AbstractEntity<Long> {
-  
-	@NotBlank
-    @Column(nullable = false, length = 20, unique = true)
-    private String username;
-    
-	@NotBlank
-    @Column(nullable = false, length = 64)
-    private String password;
+public class Usuario extends GenericUsuario {
        
-    @NotBlank
-    @Column(nullable = false, length = 60)
-    private String name;
-    
     @NotBlank
     @Column(nullable = false, length = 14)
     private String CPF;
+
+	@NotBlank
+    @Column(nullable = false, length = 14)
+    private String telefone;
+
+	@NotBlank
+    @Column(nullable = false, length = 1)
+    private String sexo;
+
+	@NotBlank
+    @Column(nullable = false, length = 14)
+    private String dataNascimento;
+
+	
     
-    @NotBlank
-    @Column(nullable = false, length = 10)
-    private String role;
-    
-    @Column(nullable = false)
-    private boolean enabled;
-		
-	public String getUsername() {
-		return username;
+	
+	public String getTelefone() {
+		return telefone;
 	}
-	
-	public void setUsername(String username) {
-		this.username = username;
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
-	
-	public String getPassword() {
-		return password;
+
+	public String getSexo() {
+		return sexo;
 	}
-	
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
-	
-	public String getName() {
-		return name;
+
+	public String getDataNascimento() {
+		return dataNascimento;
 	}
-	
-	public void setName(String name) {
-		this.name = name;
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
-	
-	
+
 	public String getCPF() {
 		return CPF;
 	}
@@ -66,19 +62,5 @@ public class Usuario extends AbstractEntity<Long> {
 		CPF = cPF;
 	}
 
-	public String getRole() {
-		return role;
-	}
 	
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	public boolean isEnabled() {
-		return enabled;
-	}
-	
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
 }

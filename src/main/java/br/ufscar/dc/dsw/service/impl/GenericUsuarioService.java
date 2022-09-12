@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.ufscar.dc.dsw.dao.IEditoraDAO;
-import br.ufscar.dc.dsw.domain.Editora;
-import br.ufscar.dc.dsw.service.spec.IEditoraService;
+import br.ufscar.dc.dsw.dao.IGenericUsuarioDAO;
+import br.ufscar.dc.dsw.domain.GenericUsuario;
+import br.ufscar.dc.dsw.service.spec.IGenericUsuarioService;
 
 @Service
 @Transactional(readOnly = false)
-public class EditoraService implements IEditoraService {
+public class GenericUsuarioService implements IGenericUsuarioService {
 
 	@Autowired
-	IEditoraDAO dao;
-	
-	public void salvar(Editora editora) {
-		dao.save(editora);
+	IGenericUsuarioDAO dao;
+
+	public void salvar(GenericUsuario genericUsuario) {
+		dao.save(genericUsuario);
 	}
 
 	public void excluir(Long id) {
@@ -26,17 +26,17 @@ public class EditoraService implements IEditoraService {
 	}
 
 	@Transactional(readOnly = true)
-	public Editora buscarPorId(Long id) {
+	public GenericUsuario buscarPorId(Long id) {
 		return dao.findById(id.longValue());
 	}
 
 	@Transactional(readOnly = true)
-	public List<Editora> buscarTodos() {
+	public List<GenericUsuario> buscarTodos() {
 		return dao.findAll();
 	}
-	
+
 	@Transactional(readOnly = true)
-	public boolean editoraTemPacotes(Long id) {
-		return !dao.findById(id.longValue()).getPacotes().isEmpty(); 
+	public GenericUsuario buscarPorLogin(String username){
+		return dao.getGenericUserByUsername(username);
 	}
 }

@@ -5,21 +5,22 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import br.ufscar.dc.dsw.dao.IUsuarioDAO;
-import br.ufscar.dc.dsw.domain.Usuario;
+import br.ufscar.dc.dsw.dao.IGenericUsuarioDAO;
+import br.ufscar.dc.dsw.domain.GenericUsuario;
  
 public class UsuarioDetailsServiceImpl implements UserDetailsService {
  
     @Autowired
-    private IUsuarioDAO dao;
+    private IGenericUsuarioDAO dao;
      
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-        Usuario usuario = dao.getUserByUsername(username);
+        GenericUsuario usuario = dao.getGenericUserByUsername(username);
          
         if (usuario == null) {
             throw new UsernameNotFoundException("Could not find user");
+            
         }
          
         return new UsuarioDetails(usuario);

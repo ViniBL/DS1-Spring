@@ -53,6 +53,4 @@ public abstract class AbstractEntity<ID extends Serializable> implements Seriali
 		return "id=" + id;
 	}
 	
-	
-	
 }

@@ -11,12 +11,12 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<i class="oi oi-caret-right"></i>
-						<span th:text="#{editora.listar.label}"></span>
+						<span th:text="#{agencia.listar.label}"></span>
 					</li>
 				</ul>
-				<a class="btn btn-primary btn-md" th:href="@{/editoras/cadastrar}" role="button"> 
+				<a class="btn btn-primary btn-md" th:href="@{/agencias/cadastrar}" role="button"> 
 					<span class="oi oi-plus" title="Cadastro" aria-hidden="true"></span> 
-					<span th:text="#{editora.cadastrar.label}"></span>
+					<span th:text="#{agencia.cadastrar.label}"></span>
 				</a>
 			</div>
 		</nav>
@@ -30,23 +30,25 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th th:text="#{editora.cnpj.label}"></th>
-							<th th:text="#{editora.nome.label}"></th>
+							<th th:text="#{agencia.name.label}"></th>
+							<th th:text="#{agencia.cnpj.label}"></th>
+							<th th:text="#{agencia.descricao.label}"></th>
 							<th th:text="#{acao.label}"></th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="editora : ${editoras}">
-							<td th:text="${editora.id}"></td>
-							<td th:text="${editora.CNPJ}"></td>
-							<td th:text="${editora.nome}"></td>
+						<tr th:each="agencia : ${agencias}">
+							<td th:text="${agencia.id}"></td>
+							<td th:text="${agencia.name}"></td>
+							<td th:text="${agencia.CNPJ}"></td>
+							<td th:text="${agencia.descricao}"></td>
 							<td colspan="2">
-								<a class="btn btn-info btn-sm" th:href="@{/editoras/editar/{id} (id=${editora.id}) }"
+								<a class="btn btn-info btn-sm" th:href="@{/agencias/editar/{id} (id=${agencia.id}) }"
 									role="button"> 
 									<span class="oi oi-brush" th:title="#{link.editar.label}" aria-hidden="true"> </span>
 								</a>
 								<button
-									th:id="${'btn_editoras/excluir/' + editora.id}"
+									th:id="${'btn_agencias/excluir/' + agencia.id}"
 									type="button" class="btn btn-danger btn-sm"
 									data-toggle="modal" data-target="#myModal">
 									<span class="oi oi-circle-x" th:title="#{link.excluir.label}" aria-hidden="true"></span>

@@ -34,10 +34,10 @@ public class Pacote extends AbstractEntity<Long> {
 	@Column(nullable = false, columnDefinition = "DECIMAL(8,2) DEFAULT 0.0")
 	private BigDecimal preco;
     
-	@NotNull(message = "{NotNull.pacote.editora}")
+	@NotNull(message = "{NotNull.pacote.agencia}")
 	@ManyToOne
-	@JoinColumn(name = "editora_id")
-	private Editora editora;
+	@JoinColumn(name = "agencia_id")
+	private Agencia agencia;
 
 	public String getTitulo() {
 		return titulo;
@@ -71,11 +71,11 @@ public class Pacote extends AbstractEntity<Long> {
 		this.preco = preco;
 	}
 
-	public Editora getEditora() {
-		return editora;
+	public Agencia getAgencia() {
+		return agencia;
 	}
 
-	public void setEditora(Editora editora) {
-		this.editora = editora;
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
 	}
 }

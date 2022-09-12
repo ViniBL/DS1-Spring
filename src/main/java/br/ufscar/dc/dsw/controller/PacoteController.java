@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.ufscar.dc.dsw.domain.Editora;
+import br.ufscar.dc.dsw.domain.Agencia;
 import br.ufscar.dc.dsw.domain.Pacote;
-import br.ufscar.dc.dsw.service.spec.IEditoraService;
+import br.ufscar.dc.dsw.service.spec.IAgenciaService;
 import br.ufscar.dc.dsw.service.spec.IPacoteService;
 
 @Controller
@@ -28,7 +28,7 @@ public class PacoteController {
 	private IPacoteService pacoteService;
 
 	@Autowired
-	private IEditoraService editoraService;
+	private IAgenciaService agenciaService;
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Pacote pacote) {
@@ -78,8 +78,8 @@ public class PacoteController {
 		return "redirect:/pacotes/listar";
 	}
 
-	@ModelAttribute("editoras")
-	public List<Editora> listaEditoras() {
-		return editoraService.buscarTodos();
+	@ModelAttribute("agencias")
+	public List<Agencia> listaAgencias() {
+		return agenciaService.buscarTodos();
 	}
 }

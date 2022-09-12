@@ -7,14 +7,14 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import br.ufscar.dc.dsw.domain.Usuario;
+import br.ufscar.dc.dsw.domain.GenericUsuario;
  
 @SuppressWarnings("serial")
 public class UsuarioDetails implements UserDetails {
  
-    private Usuario usuario;
+    private GenericUsuario usuario;
      
-    public UsuarioDetails(Usuario usuario) {
+    public UsuarioDetails(GenericUsuario usuario) {
         this.usuario = usuario;
     }
  
@@ -54,7 +54,7 @@ public class UsuarioDetails implements UserDetails {
         return true;
     }
 
-	public Usuario getUsuario() {
+	public GenericUsuario getUsuario() {
 		return usuario;
 	}
     

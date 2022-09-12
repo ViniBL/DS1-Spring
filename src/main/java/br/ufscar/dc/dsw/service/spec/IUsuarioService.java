@@ -10,7 +10,9 @@ public interface IUsuarioService {
 
 	List<Usuario> buscarTodos();
 
-	void salvar(Usuario editora);
+	void salvar(Usuario usuario);
 
 	void excluir(Long id);	
+
+	Usuario buscarPorLogin(String username);
 }

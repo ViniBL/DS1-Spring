@@ -31,7 +31,7 @@
 							<th>#</th>
 							<th th:text="#{pacote.titulo.label}"></th>
 							<th th:text="#{pacote.autor.label}"></th>
-							<th th:text="#{pacote.editora.label}"></th>
+							<th th:text="#{pacote.agencia.label}"></th>
 							<th th:text="#{pacote.ano.label}"></th>
 							<th th:text="#{pacote.preco.label}"></th>
 							<th th:text="#{acao.label}"></th>
@@ -42,7 +42,7 @@
 							<td th:text="${pacote.id}"></td>
 							<td th:text="${pacote.titulo}"></td>
 							<td th:text="${pacote.autor}"></td>
-							<td th:text="${pacote.editora.nome}"></td>
+							<td th:text="${pacote.agencia.name}"></td>
 							<td th:text="${pacote.ano}"></td>
 							<td th:text="|R$ ${#numbers.formatDecimal(pacote.preco,2,2,'COMMA')}|"></td>
 							<td colspan="2">
