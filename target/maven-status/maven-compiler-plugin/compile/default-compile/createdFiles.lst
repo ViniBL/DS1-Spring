@@ -1,0 +1,11 @@
+br/ufscar/dc/dsw/service/spec/IUsuarioService.class
+br/ufscar/dc/dsw/security/UsuarioDetailsServiceImpl.class
+br/ufscar/dc/dsw/domain/AbstractEntity.class
+br/ufscar/dc/dsw/controller/ErrorViewController.class
+br/ufscar/dc/dsw/dao/IUsuarioDAO.class
+br/ufscar/dc/dsw/controller/UsuarioController.class
+br/ufscar/dc/dsw/security/UsuarioDetails.class
+br/ufscar/dc/dsw/domain/Usuario.class
+br/ufscar/dc/dsw/config/MvcConfig.class
+br/ufscar/dc/dsw/conversor/BigDecimalConversor.class
+br/ufscar/dc/dsw/service/impl/UsuarioService.class
