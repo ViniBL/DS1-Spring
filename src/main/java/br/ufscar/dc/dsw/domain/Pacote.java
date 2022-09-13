@@ -16,66 +16,117 @@ import javax.validation.constraints.Size;
 @Table(name = "Pacote")
 public class Pacote extends AbstractEntity<Long> {
 
-	@NotBlank(message = "{NotBlank.pacote.titulo}")
-	@Size(max = 60)
-	@Column(nullable = false, length = 60)
-	private String titulo;
+	@NotNull(message = "{NotNull.pacote.data_partida}")
+	@Column(nullable = false)
+	private String data_partida;
 
-	@NotBlank(message = "{NotBlank.pacote.autor}")
+	@NotNull(message = "{NotNull.pacote.duracao}")
+	@Column(nullable = false)
+	private int duracao;
+    @NotBlank(message = "{NotBlank.pacote.cidade}")
 	@Size(max = 60)
 	@Column(nullable = false, length = 60)
-	private String autor;
-    
-	@NotNull(message = "{NotNull.pacote.ano}")
-	@Column(nullable = false, length = 5)
-	private Integer ano;
-	
-	@NotNull(message = "{NotNull.pacote.preco}")
+	//@Getter @Setter 
+	private String cidade;
+
+	@NotBlank(message = "{NotBlank.pacote.estado}")
+	@Size(max = 60)
+	@Column(nullable = false, length = 60)
+	//@Getter @Setter 
+	private String estado;
+
+	@NotBlank(message = "{NotBlank.pacote.pais}")
+	@Size(max = 60)
+	@Column(nullable = false, length = 60)
+	//@Getter @Setter 
+	private String pais;
+
+	@NotNull
 	@Column(nullable = false, columnDefinition = "DECIMAL(8,2) DEFAULT 0.0")
-	private BigDecimal preco;
+	//@Getter @Setter 
+	private BigDecimal valor;
+	
+	@NotBlank(message = "{NotBlank.pacote.descricao}")
+	@Size(max = 256)
+	@Column(nullable = false, length = 256)
+	//@Getter @Setter 
+	private String descricao;
     
 	@NotNull(message = "{NotNull.pacote.editora}")
 	@ManyToOne
 	@JoinColumn(name = "editora_id")
 	private Editora editora;
 
-	public String getTitulo() {
-		return titulo;
-	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+public void setDuracao(int duracao) {
+	this.duracao = duracao;
+}
 
-	public String getAutor() {
-		return autor;
-	}
+public int getDuracao() {
+	return duracao;
+}
+public BigDecimal getValor() {
+	return valor;
+}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
+public void setValor(BigDecimal valor) {
+	this.valor = valor;
+}
 
-	public Integer getAno() {
-		return ano;
-	}
+public String getDescricao() {
+	return descricao;
+}
 
-	public void setAno(Integer ano) {
-		this.ano = ano;
-	}
+public void setDescricao(String descricao) {
+	this.descricao = descricao;
+}
 
-	public BigDecimal getPreco() {
-		return preco;
-	}
+public Editora getAgencia() {
+	return editora;
+}
 
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
-	}
+public void setAgencia(Editora editora) {
+	this.editora = editora;
+}
 
-	public Editora getEditora() {
-		return editora;
-	}
+public String getCidade() {
+	return cidade;
+}
 
-	public void setEditora(Editora editora) {
-		this.editora = editora;
-	}
+public void setCidade(String cidade) {
+	this.cidade = cidade;
+}
+
+public String getEstado() {
+	return estado;
+}
+
+public void setEstado(String estado) {
+	this.estado = estado;
+}
+
+public String getPais() {
+	return pais;
+}
+
+public void setPais(String pais) {
+	this.pais = pais;
+}
+
+public Editora getEditora() {
+	return editora;
+}
+
+public void setEditora(Editora editora) {
+	this.editora = editora;
+}
+
+public String getData_partida() {
+	return data_partida;
+}
+
+public void setData_partida(String data_partida) {
+	this.data_partida = data_partida;
+}
+
 }

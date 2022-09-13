@@ -33,6 +33,7 @@ public class PacoteController {
 	@GetMapping("/cadastrar")
 	public String cadastrar(Pacote pacote) {
 		return "pacote/cadastro";
+
 	}
 
 	@GetMapping("/listar")
@@ -45,6 +46,20 @@ public class PacoteController {
 	public String salvar(@Valid Pacote pacote, BindingResult result, RedirectAttributes attr) {
 
 		if (result.hasErrors()) {
+			
+			System.out.println("aaa\naaa\naaa\naaa\naaa\naaa\naaa\naaa\naaa\naaa\naaa\naaa\naaa\n");
+			System.out.println(result.getErrorCount());
+			System.out.println(result.getAllErrors());
+			System.out.println(pacote.getDescricao());
+			System.out.println(pacote.getDuracao());
+			System.out.println(pacote.getEditora());
+			System.out.println(pacote.getCidade());
+			System.out.println(pacote.getEstado());
+			System.out.println(pacote.getPais());
+			System.out.println(pacote.getValor());
+			
+			
+			
 			return "pacote/cadastro";
 		}
 

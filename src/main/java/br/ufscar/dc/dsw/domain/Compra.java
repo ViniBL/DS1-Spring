@@ -54,7 +54,7 @@ public class Compra extends AbstractEntity<Long> {
 
 	public void setPacote(Pacote pacote) {
 		this.pacote = pacote;
-		setValor(pacote.getPreco());
+		setValor(pacote.getValor());
 	}
 
 	public Usuario getUsuario() {

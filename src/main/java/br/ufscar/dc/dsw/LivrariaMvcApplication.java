@@ -69,27 +69,36 @@ public class LivrariaMvcApplication {
 			editoraDAO.save(e3);
 			
 			Pacote l1 = new Pacote();
-			l1.setTitulo("Ensaio sobre a Cegueira");
-			l1.setAutor("José Saramago");
-			l1.setAno(1995);
-			l1.setPreco(BigDecimal.valueOf(54.9));
+			l1.setDescricao("Ensaio sobre a Cegueira");
+			l1.setDuracao(19);
+			l1.setValor(BigDecimal.valueOf(420.69));
 			l1.setEditora(e1);
+			l1.setCidade("Sumaré");
+			l1.setEstado("SP");
+			l1.setPais("não posso falar");
+			l1.setData_partida("19/09/2022");
 			pacoteDAO.save(l1);
 			
 			Pacote l2 = new Pacote();
-			l2.setTitulo("Cem anos de Solidão");
-			l2.setAutor("Gabriel Garcia Márquez");
-			l2.setAno(1977);
-			l2.setPreco(BigDecimal.valueOf(59.9));
-			l2.setEditora(e2);
+			l2.setDescricao("Aprenda a bolar com o Vini");
+			l2.setDuracao(19);
+			l2.setValor(BigDecimal.valueOf(420.69));
+			l2.setEditora(e1);
+			l2.setCidade("Sumaré");
+			l2.setEstado("SP");
+			l2.setPais("não posso falar");
+			l2.setData_partida("19/09/2022");
 			pacoteDAO.save(l2);
-			
+
 			Pacote l3 = new Pacote();
-			l3.setTitulo("Diálogos Impossíveis");
-			l3.setAutor("Luis Fernando Verissimo");
-			l3.setAno(2012);
-			l3.setPreco(BigDecimal.valueOf(22.9));
-			l3.setEditora(e3);
+			l3.setDescricao("Ensaio sobre o Vini");
+			l3.setDuracao(19);
+			l3.setValor(BigDecimal.valueOf(420.69));
+			l3.setEditora(e2);
+			l3.setCidade("Sumaré");
+			l3.setEstado("SP");
+			l3.setPais("não posso falar");
+			l3.setData_partida("19/09/2022");
 			pacoteDAO.save(l3);
 		};
 	}
