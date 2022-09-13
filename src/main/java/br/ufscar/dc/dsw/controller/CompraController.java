@@ -1,7 +1,7 @@
 package br.ufscar.dc.dsw.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+//import java.text.SimpleDateFormat;
+//import java.util.Calendar;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -41,9 +41,9 @@ public class CompraController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Compra compra) {
-		String data = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
+		//String data = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
 		compra.setUsuario(this.getUsuario());
-		compra.setData(data);
+		compra.setStatus("VIGENTE");
 		return "compra/cadastro";
 	}
 	

@@ -1,13 +1,12 @@
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/controller/CompraController.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/domain/Agencia.java
-/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/security/AgenciaDetailsServiceImpl.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/conversor/PacoteConversor.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/security/UsuarioDetails.java
-/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/security/AgenciaDetails.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/domain/AbstractEntity.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/impl/PacoteService.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/validation/UniqueCNPJValidator.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/controller/ErrorViewController.java
+/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/controller/GenericUsuarioController.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/controller/UsuarioController.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/dao/IPacoteDAO.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/config/WebSecurityConfig.java
@@ -23,8 +22,10 @@
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/spec/IPacoteService.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/security/UsuarioDetailsServiceImpl.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/impl/AgenciaService.java
+/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/impl/GenericUsuarioService.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/impl/UsuarioService.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/validation/UniqueCNPJ.java
+/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/spec/IGenericUsuarioService.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/spec/ICompraService.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/controller/PacoteController.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/config/MvcConfig.java

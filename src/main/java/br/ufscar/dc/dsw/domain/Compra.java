@@ -1,7 +1,5 @@
 package br.ufscar.dc.dsw.domain;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -16,11 +14,8 @@ public class Compra extends AbstractEntity<Long> {
 
 	@NotNull
 	@Column(nullable = false, length = 19)
-	private String data;
+	private String status;
     
-	@NotNull
-	@Column(columnDefinition = "DECIMAL(8,2) DEFAULT 0.0")
-	private BigDecimal valor;
     
 	@NotNull(message = "{NotNull.compra.pacote}")
 	@ManyToOne
@@ -32,20 +27,12 @@ public class Compra extends AbstractEntity<Long> {
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
-	public String getData() {
-		return data;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public BigDecimal getValor() {
-		return valor;
-	}
-
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Pacote getPacote() {
@@ -54,7 +41,6 @@ public class Compra extends AbstractEntity<Long> {
 
 	public void setPacote(Pacote pacote) {
 		this.pacote = pacote;
-		setValor(pacote.getPreco());
 	}
 
 	public Usuario getUsuario() {
