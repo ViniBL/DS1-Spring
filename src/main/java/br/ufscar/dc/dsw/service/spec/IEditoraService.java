@@ -14,5 +14,5 @@ public interface IEditoraService {
 
 	void excluir(Long id);
 	
-	boolean editoraTemLivros(Long id);
+	boolean editoraTemPacotes(Long id);
 }

@@ -36,7 +36,7 @@ public class EditoraService implements IEditoraService {
 	}
 	
 	@Transactional(readOnly = true)
-	public boolean editoraTemLivros(Long id) {
-		return !dao.findById(id.longValue()).getLivros().isEmpty(); 
+	public boolean editoraTemPacotes(Long id) {
+		return !dao.findById(id.longValue()).getPacotes().isEmpty(); 
 	}
 }

@@ -28,7 +28,7 @@ public class Editora extends AbstractEntity<Long> {
 	private String nome;
 
 	@OneToMany(mappedBy = "editora")
-	private List<Livro> livros;
+	private List<Pacote> pacotes;
 	
 	public String getCNPJ() {
 		return CNPJ;
@@ -46,11 +46,11 @@ public class Editora extends AbstractEntity<Long> {
 		this.nome = nome;
 	}
 
-	public List<Livro> getLivros() {
-		return livros;
+	public List<Pacote> getPacotes() {
+		return pacotes;
 	}
 
-	public void setLivros(List<Livro> livros) {
-		this.livros = livros;
+	public void setPacotes(List<Pacote> pacotes) {
+		this.pacotes = pacotes;
 	}
 }

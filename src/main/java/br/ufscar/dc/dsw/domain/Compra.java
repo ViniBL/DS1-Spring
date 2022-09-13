@@ -22,10 +22,10 @@ public class Compra extends AbstractEntity<Long> {
 	@Column(columnDefinition = "DECIMAL(8,2) DEFAULT 0.0")
 	private BigDecimal valor;
     
-	@NotNull(message = "{NotNull.compra.livro}")
+	@NotNull(message = "{NotNull.compra.pacote}")
 	@ManyToOne
-	@JoinColumn(name = "livro_id")
-	private Livro livro;
+	@JoinColumn(name = "pacote_id")
+	private Pacote pacote;
 
 	@NotNull
 	@ManyToOne
@@ -48,13 +48,13 @@ public class Compra extends AbstractEntity<Long> {
 		this.valor = valor;
 	}
 
-	public Livro getLivro() {
-		return livro;
+	public Pacote getPacote() {
+		return pacote;
 	}
 
-	public void setLivro(Livro livro) {
-		this.livro = livro;
-		setValor(livro.getPreco());
+	public void setPacote(Pacote pacote) {
+		this.pacote = pacote;
+		setValor(pacote.getValor());
 	}
 
 	public Usuario getUsuario() {
