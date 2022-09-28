@@ -15,4 +15,6 @@ public interface IAgenciaService {
 	void excluir(Long id);
 	
 	boolean agenciaTemPacotes(Long id);
+
+	Agencia buscarPorLogin(String username);
 }

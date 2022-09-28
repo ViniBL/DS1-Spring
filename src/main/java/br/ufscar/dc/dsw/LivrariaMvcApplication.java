@@ -111,7 +111,7 @@ public class LivrariaMvcApplication {
 			l2.setDescricao("Aprenda a bolar com o Vini");
 			l2.setDuracao(19);
 			l2.setValor(BigDecimal.valueOf(420.69));
-			l2.setAgencia(e1);
+			l2.setAgencia(e3);
 			l2.setCidade("Sumaré");
 			l2.setEstado("SP");
 			l2.setPais("não posso falar");

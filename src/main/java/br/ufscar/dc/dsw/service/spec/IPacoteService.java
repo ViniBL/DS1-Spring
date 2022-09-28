@@ -2,6 +2,7 @@ package br.ufscar.dc.dsw.service.spec;
 
 import java.util.List;
 
+import br.ufscar.dc.dsw.domain.Agencia;
 import br.ufscar.dc.dsw.domain.Pacote;
 
 public interface IPacoteService {
@@ -13,5 +14,7 @@ public interface IPacoteService {
 	void salvar(Pacote pacote);
 	
 	void excluir(Long id);
+
+	List<Pacote> buscarTodosPorAgencia(Agencia agencia);
 	
 }
