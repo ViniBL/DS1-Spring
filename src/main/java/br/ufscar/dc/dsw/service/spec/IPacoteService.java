@@ -16,5 +16,15 @@ public interface IPacoteService {
 	void excluir(Long id);
 
 	List<Pacote> buscarTodosPorAgencia(Agencia agencia);
+
+	List<Pacote> buscarTodosPorCidade(String cidade);
+
+	List<Pacote> buscarTodosPorEstado(String estado);
+
+	List<Pacote> buscarTodosPorPais(String pais);
+
+	List<Pacote> buscarTodosPorDataPartida(String dataPartida);
+
+	List<Pacote> findByCriteria(String cidade, String estado, String pais, String dataPartida, String agencia);
 	
 }

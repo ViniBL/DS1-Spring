@@ -101,10 +101,10 @@ public class LivrariaMvcApplication {
 			l1.setDuracao(19);
 			l1.setValor(BigDecimal.valueOf(420.69));
 			l1.setAgencia(e1);
-			l1.setCidade("Sumaré");
+			l1.setCidade("Campinas");
 			l1.setEstado("SP");
 			l1.setPais("não posso falar");
-			l1.setData_partida("19/09/2022");
+			l1.setDataPartida("19/09/2022");
 			pacoteDAO.save(l1);
 			
 			Pacote l2 = new Pacote();
@@ -114,8 +114,8 @@ public class LivrariaMvcApplication {
 			l2.setAgencia(e3);
 			l2.setCidade("Sumaré");
 			l2.setEstado("SP");
-			l2.setPais("não posso falar");
-			l2.setData_partida("19/09/2022");
+			l2.setPais("Brasil");
+			l2.setDataPartida("19/09/2022");
 			pacoteDAO.save(l2);
 
 			Pacote l3 = new Pacote();
@@ -126,7 +126,7 @@ public class LivrariaMvcApplication {
 			l3.setCidade("Sumaré");
 			l3.setEstado("SP");
 			l3.setPais("não posso falar");
-			l3.setData_partida("19/09/2022");
+			l3.setDataPartida("19/09/2022");
 			pacoteDAO.save(l3);
 		};
 	}

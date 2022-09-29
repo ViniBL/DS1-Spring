@@ -22,6 +22,20 @@
 
 		<div class="container" id="listagem">
 
+			<form th:action="@{/pacotes/listar/todos/filtro}" method="POST">
+				<label>Filtrar por Cidade:</label>
+				<input name="cidade"/><br>
+				<label>Filtrar por Estado:</label>
+				<input name="estado"/><br>
+				<label>Filtrar por País:</label>
+				<input name="pais"/><br>
+				<label>Filtro por Data de Partida:</label>
+				<input name="dataPartida"/><br>
+				<label>Filtro por Agência:</label>
+				<input name="agencia"/><br>
+				<button type="submit" th:text="Filtrar"
+					class="btn btn-primary btn-sm"></button>
+			</form>
 			<div th:replace="fragments/alert"></div>
 
 			<div class="table-responsive">
@@ -36,7 +50,7 @@
 							<th th:text="#{pacote.estado.label}"></th>
 							<th th:text="#{pacote.pais.label}"></th>
 							<th th:text="#{pacote.valor.label}"></th>
-							<th th:text="#{pacote.data_partida.label}"></th>
+							<th th:text="#{pacote.dataPartida.label}"></th>
 							<th th:text="#{acao.label}"></th>
 						</tr>
 					</thead>
@@ -50,7 +64,7 @@
 							<td th:text="${pacote.estado}"></td>
 							<td th:text="${pacote.pais}"></td>
                             <td th:text="|R$ ${#numbers.formatDecimal(pacote.valor,2,2,'COMMA')}|"></td>
-							<td th:text="${pacote.data_partida}"></td>
+							<td th:text="${pacote.dataPartida}"></td>
 							<td colspan="2">
 								<a class="btn btn-info btn-sm"
 									th:href="@{/pacotes/editar/{id} (id=${pacote.id}) }" role="button"> 

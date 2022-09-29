@@ -99,13 +99,13 @@
 					</div>
 
 					<div class="form-group col-md-6">
-						<label th:text="#{pacote.data_partida.label}" for="data_partida"></label> 
-						<input type="text" class="form-control" id="data_partida" placeholder="Data Partida"
-							autofocus="autofocus" th:field="*{data_partida}"
-							th:classappend="${#fields.hasErrors('data_partida')} ? is-invalid" />
+						<label th:text="#{pacote.dataPartida.label}" for="dataPartida"></label> 
+						<input type="text" class="form-control" id="dataPartida" placeholder="Data Partida"
+							autofocus="autofocus" th:field="*{dataPartida}"
+							th:classappend="${#fields.hasErrors('dataPartida')} ? is-invalid" />
 						
 						<div class="invalid-feedback">
-							<span th:errors="*{data_partida}"></span>
+							<span th:errors="*{dataPartida}"></span>
 						</div>
 					</div>
 

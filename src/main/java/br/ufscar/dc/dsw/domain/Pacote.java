@@ -16,13 +16,14 @@ import javax.validation.constraints.Size;
 @Table(name = "Pacote")
 public class Pacote extends AbstractEntity<Long> {
 
-	@NotNull(message = "{NotNull.pacote.data_partida}")
+	@NotNull(message = "{NotNull.pacote.dataPartida}")
 	@Column(nullable = false)
-	private String data_partida;
+	private String dataPartida;
 
 	@NotNull(message = "{NotNull.pacote.duracao}")
 	@Column(nullable = false)
 	private int duracao;
+	
     @NotBlank(message = "{NotBlank.pacote.cidade}")
 	@Size(max = 60)
 	@Column(nullable = false, length = 60)
@@ -113,12 +114,12 @@ public void setAgencia(Agencia agencia) {
 	this.agencia = agencia;
 }
 
-public String getData_partida() {
-	return data_partida;
+public String getDataPartida() {
+	return dataPartida;
 }
 
-public void setData_partida(String data_partida) {
-	this.data_partida = data_partida;
+public void setDataPartida(String dataPartida) {
+	this.dataPartida = dataPartida;
 }
 
 }
