@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.ufscar.dc</groupId>
-	<artifactId>LivrariaMVC</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Livraria MVC (v3)</name>
+	<artifactId>ViaGra</artifactId>
+	<version>0.8.1-SNAPSHOT</version>
+	<name>ViaGra</name>
 
 	<properties>
 		<java.version>1.8</java.version>
