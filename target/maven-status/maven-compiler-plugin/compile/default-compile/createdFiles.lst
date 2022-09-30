@@ -26,6 +26,7 @@ br/ufscar/dc/dsw/conversor/AgenciaConversor.class
 br/ufscar/dc/dsw/service/spec/ICompraService.class
 br/ufscar/dc/dsw/security/UsuarioDetails.class
 br/ufscar/dc/dsw/service/impl/AgenciaService.class
+br/ufscar/dc/dsw/ViaGra.class
 br/ufscar/dc/dsw/dao/IAgenciaDAO.class
 br/ufscar/dc/dsw/controller/CompraController.class
 br/ufscar/dc/dsw/domain/Usuario.class

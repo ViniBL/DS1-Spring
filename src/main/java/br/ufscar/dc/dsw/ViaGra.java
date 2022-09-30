@@ -115,7 +115,7 @@ public class ViaGra {
 			p2.setCidade("Sumaré");
 			p2.setEstado("SP");
 			p2.setPais("Brasil");
-			p2.setDataPartida("19/09/2022");
+			p2.setDataPartida("30/09/2022");
 			pacoteDAO.save(p2);
 
 			Pacote p3 = new Pacote();

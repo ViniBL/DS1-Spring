@@ -16,6 +16,7 @@ public class ErrorViewController implements ErrorViewResolver {
 	public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status, Map<String, Object> map) {
 		        
 		ModelAndView model = new ModelAndView("error");
+
 		model.addObject("status", status.value());
 		switch (status.value()) {
 		case 403:
@@ -25,6 +26,10 @@ public class ErrorViewController implements ErrorViewResolver {
 		case 404:
 			model.addObject("error", "404.error");
 			model.addObject("message", "404.message");
+			break;
+		case 500:
+			model.addObject("error", "Erro interno do servidor");
+			model.addObject("message", "Erro interno do servidor");
 			break;
 		default:
 			model.addObject("error", "default.error");

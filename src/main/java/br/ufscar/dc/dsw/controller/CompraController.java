@@ -92,6 +92,6 @@ public class CompraController {
 
 			model.addAttribute("fail", "compra.delete.fail");
 		}
-		return "redirect:/compras/listar";
+		return listar(model);
 	}
 }
