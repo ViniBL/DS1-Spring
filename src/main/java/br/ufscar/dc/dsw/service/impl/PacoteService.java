@@ -57,7 +57,7 @@ public class PacoteService implements IPacoteService {
 
 	@Transactional(readOnly = true)
 	public List<Pacote> buscarTodosPorAgencia(Agencia agencia){
-		System.out.println("\nEntrou no service\n");
+		
 		return dao.findAllByAgencia(agencia);
 	}
 

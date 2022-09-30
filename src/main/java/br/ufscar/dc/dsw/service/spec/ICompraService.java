@@ -12,4 +12,6 @@ public interface ICompraService {
 	List<Compra> buscarTodosPorUsuario(Usuario u);
 	
 	void salvar(Compra agencia);
+
+	boolean excluirPorId(Long id);
 }

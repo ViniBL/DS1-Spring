@@ -40,6 +40,7 @@
 							<th class="bg-warning" th:text="#{pacote.pais.label}"></th>
 							<th class="bg-warning" th:text="#{pacote.valor.label}"></th>
 							<th class="bg-warning" th:text="#{compra.status.label}"></th>
+							<th class="bg-warning" th:text="#{acao.label}"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -54,6 +55,14 @@
 							<td th:text="${compra.pacote.pais}"></td>
 							<td th:text="|R$ ${#numbers.formatDecimal(compra.pacote.valor,2,2,'COMMA')}|"></td>
 							<td th:text="${compra.status}"></td>
+							<td colspan="1">
+								<button
+									th:id="${'btn_compras/excluir/' + compra.id}"
+									type="button" class="btn btn-danger btn-sm"
+									data-toggle="modal" data-target="#myModal">
+									<span class="oi oi-circle-x" th:title="#{link.excluir.label}" aria-hidden="true"></span>
+								</button>
+							</td>
 						</tr>
 					</tbody>
 				</table>

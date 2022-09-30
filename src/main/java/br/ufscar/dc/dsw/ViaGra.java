@@ -104,7 +104,7 @@ public class ViaGra {
 			p1.setCidade("Campinas");
 			p1.setEstado("SP");
 			p1.setPais("não posso falar");
-			p1.setDataPartida("19/09/2022");
+			p1.setDataPartida("10/10/2022");
 			pacoteDAO.save(p1);
 			
 			Pacote p2 = new Pacote();
