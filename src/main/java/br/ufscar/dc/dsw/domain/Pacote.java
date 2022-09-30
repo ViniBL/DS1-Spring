@@ -55,7 +55,7 @@ public class Pacote extends AbstractEntity<Long> {
     
 	@NotNull(message = "{NotNull.pacote.agencia}")
 	@ManyToOne
-	@JoinColumn(name = "agencia_id")
+	@JoinColumn(name = "agenciaId")
 	private Agencia agencia;
 
 

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-//import org.springframework.data.repository.query.Param;
+import org.springframework.data.repository.query.Param;
 //import org.springframework.stereotype.Repository;
 
 import br.ufscar.dc.dsw.domain.Agencia;
@@ -24,7 +24,8 @@ public interface IPacoteDAO extends CrudRepository<Pacote, Long>, JpaSpecificati
 
 	void deleteById(Long id);
 
-	public List<Pacote> findAllByAgencia(Agencia a);
+	//@Query("SELECT p FROM Pacote p WHERE p.agenciaId = :agenciaId")
+	public List<Pacote> findAllByAgencia(Agencia agenciaId);
 
 	@Query("SELECT p FROM Pacote p WHERE p.cidade like %?1%")
 	public List<Pacote> findAllByCidade(String cidade);

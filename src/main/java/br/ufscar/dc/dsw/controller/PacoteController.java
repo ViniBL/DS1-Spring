@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+//import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.ufscar.dc.dsw.domain.Agencia;
@@ -42,13 +42,13 @@ public class PacoteController {
 	@GetMapping("/listar/todos")
 	public String listar(ModelMap model) {
 		model.addAttribute("pacotes", pacoteService.findByCriteria(null, null, null, null, null));
-		return "pacote/lista";
+		return "pacote/listaTodos";
 	}
 
 	@PostMapping("/listar/todos/filtro")
 	public String listarFiltro(ModelMap model, @RequestParam("cidade") String cidade, @RequestParam("estado") String estado, @RequestParam("pais") String pais, @RequestParam("dataPartida") String dataPartida, @RequestParam("agencia") String agencia) {
 		model.addAttribute("pacotes", pacoteService.findByCriteria(cidade, estado, pais, dataPartida, agencia));
-		return "/pacote/lista";
+		return "/pacote/listaTodos";
 	}
 
 	@PostMapping("/salvar")
@@ -102,7 +102,15 @@ public class PacoteController {
 
 	@GetMapping("/listar")
 	public String listaPacotesPorAgencia(ModelMap model){
+		System.out.println("\nEntrou no controller\n");
 		model.addAttribute("pacotes", pacoteService.buscarTodosPorAgencia(this.getAgencia()));
+		System.out.println("\nPassou do model retornou pra pagina de lista\n");
+		return "pacote/lista";
+	}
+
+	@GetMapping("/listar/filtro")
+	public String listaPacotesVigentesPorAgencia(ModelMap model){
+		model.addAttribute("pacotes", pacoteService.buscarTodosVigentesPorAgencia(this.getAgencia()));
 		return "pacote/lista";
 	}
 

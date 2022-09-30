@@ -126,7 +126,7 @@ public class ViaGra {
 			p3.setCidade("Sumaré");
 			p3.setEstado("SP");
 			p3.setPais("não posso falar");
-			p3.setDataPartida("19/09/2022");
+			p3.setDataPartida("30/09/2022");
 			pacoteDAO.save(p3);
 		};
 	}

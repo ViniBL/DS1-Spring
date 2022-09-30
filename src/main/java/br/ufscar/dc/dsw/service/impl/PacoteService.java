@@ -1,5 +1,7 @@
 package br.ufscar.dc.dsw.service.impl;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 //import java.util.function.Predicate;
@@ -55,7 +57,24 @@ public class PacoteService implements IPacoteService {
 
 	@Transactional(readOnly = true)
 	public List<Pacote> buscarTodosPorAgencia(Agencia agencia){
+		System.out.println("\nEntrou no service\n");
 		return dao.findAllByAgencia(agencia);
+	}
+
+	@Transactional(readOnly = true)
+	public List<Pacote> buscarTodosVigentesPorAgencia(Agencia agencia){
+		List<Pacote> pacotes = this.buscarTodosPorAgencia(agencia);
+		List<Pacote> pacotesVigentes = new ArrayList<>();
+		LocalDate dataAtual = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		for(Pacote pacote : pacotes){
+			String dataPartida = pacote.getDataPartida();
+			LocalDate dp = LocalDate.parse(dataPartida, formatter);
+			if(dp.isAfter(dataAtual)){
+				pacotesVigentes.add(pacote);
+			}
+		}
+		return pacotesVigentes;
 	}
 
 	@Transactional(readOnly = true)
@@ -84,19 +103,20 @@ public class PacoteService implements IPacoteService {
 			@Override
 			public Predicate toPredicate(Root<Pacote> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
 				List<Predicate> predicates = new ArrayList<>();
-				if(cidade!=null) {
+				System.out.println("\n\n\nO VALOR DO FORMULARIO CIDADE É:"+cidade+"\n\n");
+				if(cidade!="" && cidade!=null) {
 					predicates.add(criteriaBuilder.and(criteriaBuilder.like(root.get("cidade"), "%"+cidade+"%")));
 				}
-				if(estado!=null){
+				if(estado!="" && estado!=null){
 					predicates.add(criteriaBuilder.and(criteriaBuilder.like(root.get("estado"), "%"+estado+"%")));
 				}
-				if(pais!=null){
+				if(pais!="" && pais!=null){
 					predicates.add(criteriaBuilder.and(criteriaBuilder.like(root.get("pais"), "%"+pais+"%")));
 				}
-				if(dataPartida!=null){
+				if(dataPartida!="" && dataPartida!=null){
 					predicates.add(criteriaBuilder.and(criteriaBuilder.like(root.get("dataPartida"), "%"+dataPartida+"%")));
 				}
-				if(agencia!=null){
+				if(agencia!="" && agencia!=null){
 					Agencia agenciaf = adao.getAgencyByName(agencia);
 					predicates.add(criteriaBuilder.and(criteriaBuilder.equal(root.get("agencia"), agenciaf)));
 				}

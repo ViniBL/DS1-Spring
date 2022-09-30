@@ -12,7 +12,6 @@
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/config/WebSecurityConfig.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/dao/IUsuarioDAO.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/dao/IGenericUsuarioDAO.java
-/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/LivrariaMvcApplication.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/domain/Pacote.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/domain/GenericUsuario.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/dao/ICompraDAO.java
@@ -34,4 +33,5 @@
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/domain/Compra.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/conversor/AgenciaConversor.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/service/impl/CompraService.java
+/home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/ViaGra.java
 /home/enio/DSW/DS1-Spring/src/main/java/br/ufscar/dc/dsw/domain/Usuario.java

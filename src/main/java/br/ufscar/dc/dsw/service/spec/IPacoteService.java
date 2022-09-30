@@ -17,6 +17,8 @@ public interface IPacoteService {
 
 	List<Pacote> buscarTodosPorAgencia(Agencia agencia);
 
+	List<Pacote> buscarTodosVigentesPorAgencia(Agencia agencia);
+
 	List<Pacote> buscarTodosPorCidade(String cidade);
 
 	List<Pacote> buscarTodosPorEstado(String estado);
